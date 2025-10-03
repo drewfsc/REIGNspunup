@@ -79,13 +79,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
               href="#demo" 
-              className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-2xl shadow-purple-500/50"
+              className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg font-semibold text-lg transition-all transform hover:scale-105 active:scale-95 shadow-2xl shadow-purple-500/50 ripple-effect"
             >
               Book a Demo
             </a>
             <a 
               href="#signup" 
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-lg font-semibold text-lg transition-all backdrop-blur-sm border border-white/20"
+              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-lg font-semibold text-lg transition-all backdrop-blur-sm border border-white/20 hover:border-white/40 transform hover:scale-105 active:scale-95"
             >
               Get Early Access
             </a>
@@ -387,7 +387,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 bg-slate-950 bg-texture-dots relative overflow-hidden" id="pricing">
+      <section className="py-24 bg-slate-950 bg-texture-dots relative no-scroll" id="pricing">
         {/* Parallax background */}
         <div className="absolute inset-0 overflow-hidden opacity-20">
           <div className="absolute w-[600px] h-[600px] top-1/4 -left-48 bg-violet-600/30 rounded-full blur-3xl"></div>
@@ -400,47 +400,14 @@ export default function Home() {
               Simple, Fair Pricing for a Simple, Fair Process
             </h2>
             <p className="text-xl text-gray-300">
-              First Year Pricing — Choose the plan that fits your team
+              Choose the plan that fits your team
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
-            {/* Join Us - Early Access */}
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow border-2 border-purple-500/30">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-white mb-2">JOIN US</h3>
-                <div className="text-sm text-purple-400 font-semibold mb-4">Early Access</div>
-                <div className="text-5xl font-bold text-white mb-2">Free</div>
-                <div className="text-gray-400">First Year</div>
-              </div>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start">
-                  <span className="text-purple-400 mr-3 text-xl flex-shrink-0">✓</span>
-                  <span className="text-gray-300">Early access to all features</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-400 mr-3 text-xl flex-shrink-0">✓</span>
-                  <span className="text-gray-300">Help shape the platform</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-400 mr-3 text-xl flex-shrink-0">✓</span>
-                  <span className="text-gray-300">Priority support</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-400 mr-3 text-xl flex-shrink-0">✓</span>
-                  <span className="text-gray-300">Exclusive community access</span>
-                </li>
-              </ul>
-              <a
-                href="#signup"
-                className="block w-full px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-semibold text-center transition-all transform hover:scale-105"
-              >
-                Join Early Access
-              </a>
-            </div>
+          <div className="flex flex-nowrap gap-8 max-w-7xl mx-auto justify-center overflow-visible pb-4 pt-8 px-2">
 
             {/* Get Started */}
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow border-2 border-slate-600/30">
+            <div className="flex-shrink-0 w-80 bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 border-2 border-slate-600/30 hover:border-blue-500/60 hover:-translate-y-2">
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-white mb-2">Get Started</h3>
                 <div className="text-sm text-gray-400 font-semibold mb-4">Small Teams</div>
@@ -467,15 +434,15 @@ export default function Home() {
               </ul>
               <a
                 href="#demo"
-                className="block w-full px-6 py-3 bg-white hover:bg-gray-100 text-gray-900 rounded-lg font-semibold text-center transition-all"
+                className="block w-full px-6 py-3 bg-white hover:bg-gray-100 text-gray-900 rounded-lg font-semibold text-center transition-all active:scale-95 ripple-effect"
               >
                 Book a Demo
               </a>
             </div>
 
             {/* Go Pro */}
-            <div className="bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-shadow border-2 border-purple-400 relative transform md:scale-105">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-yellow-400 text-gray-900 rounded-full text-sm font-bold">
+            <div className="flex-shrink-0 w-80 bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 border-2 border-purple-400 relative md:scale-105 md:hover:scale-110 hover:-translate-y-1">
+              <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-4 py-1 bg-yellow-400 text-gray-900 rounded-full text-sm font-bold whitespace-nowrap">
                 MOST POPULAR
               </div>
               <div className="text-center mb-6">
@@ -508,56 +475,52 @@ export default function Home() {
               </ul>
               <a
                 href="#demo"
-                className="block w-full px-6 py-3 bg-white hover:bg-gray-100 text-purple-600 rounded-lg font-semibold text-center transition-all transform hover:scale-105"
+                className="block w-full px-6 py-3 bg-white hover:bg-gray-100 text-purple-600 rounded-lg font-semibold text-center transition-all transform hover:scale-105 active:scale-95 ripple-effect"
               >
                 Book a Demo
               </a>
             </div>
-          </div>
 
-          {/* Scale - Enterprise */}
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-12 shadow-xl border-2 border-violet-500/30">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h3 className="text-3xl font-bold text-white mb-4">Scale</h3>
-                  <p className="text-lg text-gray-300 mb-6">
-                    For enterprise organizations with complex workforce needs. Custom solutions, 
-                    dedicated support, and white-glove implementation.
-                  </p>
-                  <ul className="space-y-3 text-gray-300">
-                    <li className="flex items-start">
-                      <span className="text-violet-400 mr-3 text-xl flex-shrink-0">✓</span>
-                      <span>Unlimited users</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-violet-400 mr-3 text-xl flex-shrink-0">✓</span>
-                      <span>Custom integrations & API access</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-violet-400 mr-3 text-xl flex-shrink-0">✓</span>
-                      <span>Dedicated account manager</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-violet-400 mr-3 text-xl flex-shrink-0">✓</span>
-                      <span>On-premise deployment options</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="text-center md:text-right">
-                  <div className="text-5xl font-bold text-white mb-4">Custom</div>
-                  <p className="text-gray-300 mb-6">Tailored to your needs</p>
-                  <a
-                    href="#demo"
-                    className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg font-semibold transition-all transform hover:scale-105"
-                  >
-                    Contact Sales
-                  </a>
-                </div>
+            {/* Scale */}
+            <div className="flex-shrink-0 w-80 bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-violet-500/20 transition-all duration-300 border-2 border-violet-500/30 hover:border-violet-500/60 hover:-translate-y-2">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-white mb-2">Scale</h3>
+                <div className="text-sm text-gray-400 font-semibold mb-4">Enterprise</div>
+                <div className="text-5xl font-bold text-white mb-2">$149</div>
+                <div className="text-gray-400">per user/month</div>
               </div>
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start">
+                  <span className="text-violet-400 mr-3 text-xl flex-shrink-0">✓</span>
+                  <span className="text-gray-300">Unlimited users</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-violet-400 mr-3 text-xl flex-shrink-0">✓</span>
+                  <span className="text-gray-300">Custom integrations & API access</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-violet-400 mr-3 text-xl flex-shrink-0">✓</span>
+                  <span className="text-gray-300">Dedicated account manager</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-violet-400 mr-3 text-xl flex-shrink-0">✓</span>
+                  <span className="text-gray-300">On-premise deployment options</span>
+                </li>
+              </ul>
+              <a
+                href="#demo"
+                className="block w-full px-6 py-3 bg-white hover:bg-gray-100 text-purple-600 rounded-lg font-semibold text-center transition-all transform hover:scale-105 active:scale-95 ripple-effect"
+              >
+                Contact Sales
+              </a>
             </div>
           </div>
-        </div>
+
+          {/* Scroll indicator for mobile */}
+          <div className="text-center mt-8 md:hidden">
+            <p className="text-sm text-gray-400 animate-pulse">← Swipe to see all plans →</p>
+          </div>
+        </div> 
       </section>
 
       {/* Testimonials Section */}
@@ -648,7 +611,7 @@ export default function Home() {
             </div>
             <a 
               href="mailto:info@mindfulmeasuresinc.com"
-              className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-2xl shadow-purple-500/50"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg font-semibold text-lg transition-all transform hover:scale-105 active:scale-95 shadow-2xl shadow-purple-500/50 ripple-effect"
             >
               Contact Us for a Demo
             </a>
@@ -809,7 +772,7 @@ function MailchimpForm() {
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-2xl shadow-purple-500/50 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg font-semibold text-lg transition-all transform hover:scale-105 active:scale-95 shadow-2xl shadow-purple-500/50 disabled:opacity-50 disabled:cursor-not-allowed ripple-effect"
             >
               {status === 'sending' ? 'Subscribing...' : 'Get Early Access'}
             </button>
