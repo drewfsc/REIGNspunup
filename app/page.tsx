@@ -34,7 +34,21 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950">
+        {/* Parallax Background Image */}
+        <div className="absolute inset-0 parallax">
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ 
+              backgroundImage: 'url(/rod-long.jpg)',
+              backgroundAttachment: 'fixed',
+              transform: 'scale(1.1)'
+            }}
+          ></div>
+          {/* Heavy dark overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-950/85 via-purple-950/80 to-slate-900/85"></div>
+        </div>
+
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute w-96 h-96 -top-48 -left-48 bg-purple-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
