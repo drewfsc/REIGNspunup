@@ -4,6 +4,7 @@ import {
   HeroSection,
   StatsSection,
   FeaturesSection,
+  AIShowcaseSection,
   PricingSection,
   TestimonialsSection,
   SignupSection,
@@ -50,6 +51,7 @@ export default function Home() {
       <HeroSection />
       <StatsSection />
       <FeaturesSection />
+      <AIShowcaseSection />
       <PricingSection />
       <TestimonialsSection />
       <SignupSection />
