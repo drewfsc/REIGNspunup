@@ -37,14 +37,14 @@ export default function FullscreenDemo() {
         <div className="fixed inset-0 z-[100] animate-fade-in">
           {/* Background Image */}
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-fill"
             style={{
               backgroundImage: 'url(/dash-bak.png)',
             }}
           ></div>
 
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950/70 via-blue-950/60 to-slate-950/70"></div>
+          <div className="absolute inset-0 bg-slate-800/70 backdrop-blur-[1px]"></div>
 
           {/* Close Button */}
           <button

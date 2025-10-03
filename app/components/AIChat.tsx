@@ -159,9 +159,9 @@ export default function AIChat() {
   };
 
   return (
-    <div className="flex flex-col h-[600px] bg-slate-800/70 backdrop-blur-sm rounded-2xl border-2 border-purple-500/30 overflow-hidden shadow-xl shadow-black/70">
+    <div className="flex flex-col h-[600px] bg-black/50 backdrop-blur-sm rounded-2xl border-2 border-purple-500/10 overflow-hidden shadow-xl shadow-black/70">
       {/* Chat Header */}
-      <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-4 border-b border-purple-500/30">
+      <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-4 border-b border-purple-500/10">
         <div className="flex items-center gap-3">
           <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
           <div>
