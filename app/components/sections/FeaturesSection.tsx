@@ -136,7 +136,7 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              ref={(el) => (featureRefs.current[index] = el)}
+              ref={(el) => { featureRefs.current[index] = el; }}
               className={`feature-entrance grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${feature.reverse ? 'lg:flex-row-reverse' : ''} ${feature.tintBg || ''}`}
             >
               <div className={feature.reverse ? 'order-2 lg:order-1' : ''}>
