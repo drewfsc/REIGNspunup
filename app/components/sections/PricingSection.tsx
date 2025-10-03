@@ -1,8 +1,36 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import Section from '../Section';
 
 export default function PricingSection() {
+  const pricingRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const cards = entry.target.querySelectorAll('.pricing-card');
+            cards.forEach((card, index) => {
+              setTimeout(() => {
+                card.classList.add('animate-fade-up');
+              }, index * 150);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (pricingRef.current) {
+      observer.observe(pricingRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const pricingTiers = [
     {
       name: 'Get Started',
@@ -92,11 +120,11 @@ export default function PricingSection() {
           <p className="text-xl text-gray-300">Choose the plan that fits your team</p>
         </div>
 
-        <div className="flex flex-nowrap gap-8 max-w-7xl mx-auto justify-center overflow-visible pb-4 pt-8 px-2">
+        <div ref={pricingRef} className="flex flex-nowrap gap-8 max-w-7xl mx-auto justify-center overflow-visible pb-4 pt-8 px-2">
           {pricingTiers.map((tier, index) => (
             <div
               key={index}
-              className={`flex-shrink-0 w-80 rounded-2xl p-8 shadow-lg hover:shadow-2xl ${tier.colors.shadow || ''} transition-all duration-300 border-2 ${tier.colors.border} hover:-translate-y-1 relative ${
+              className={`pricing-card entrance-element flex-shrink-0 w-80 rounded-2xl p-8 shadow-lg hover:shadow-2xl ${tier.colors.shadow || ''} transition-all duration-300 border-2 ${tier.colors.border} hover:-translate-y-1 relative ${
                 tier.scale ? 'bg-gradient-to-br from-purple-600 to-blue-600 md:scale-105 md:hover:scale-110' : 'bg-slate-800/50 backdrop-blur-sm'
               }`}
             >

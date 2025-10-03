@@ -1,8 +1,31 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import Section from '../Section';
 
 export default function DemoSection() {
+  const demoRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-up');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (demoRef.current) {
+      observer.observe(demoRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <Section
       id="demo"
@@ -24,7 +47,7 @@ export default function DemoSection() {
         <p className="text-xl text-gray-300 mb-12">
           Schedule a personalized demo and see how R.E.I.G.N. can eliminate bias and empower growth in your organization.
         </p>
-        <div className="bg-gradient-to-br from-slate-800/80 to-slate-700/80 backdrop-blur-sm rounded-2xl p-12 border-2 border-purple-500/30">
+        <div ref={demoRef} className="entrance-element bg-gradient-to-br from-slate-800/80 to-slate-700/80 backdrop-blur-sm rounded-2xl p-12 border-2 border-purple-500/30">
           <div className="mb-8">
             <img
               src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80"

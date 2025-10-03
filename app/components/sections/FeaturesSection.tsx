@@ -1,8 +1,37 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import Section from '../Section';
 
 export default function FeaturesSection() {
+  const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observers = featureRefs.current.map((ref, index) => {
+      if (!ref) return null;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const animationClass = index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right';
+              entry.target.classList.add(animationClass);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      observer.observe(ref);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer?.disconnect());
+    };
+  }, []);
+
   const features = [
     {
       badge: 'Time & Attendance',
@@ -17,6 +46,7 @@ export default function FeaturesSection() {
       ],
       image: '/mac-mok.png',
       imageAlt: 'Time & Attendance Dashboard',
+      tintBg: 'bg-gradient-to-r from-purple-950/40 via-fuchsia-950/30 to-purple-950/40 rounded-3xl p-8 lg:p-12 border border-purple-500/10',
     },
     {
       badge: 'AI-Powered Intelligence',
@@ -32,6 +62,7 @@ export default function FeaturesSection() {
       image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
       imageAlt: 'AI Technology',
       reverse: true,
+      tintBg: 'bg-gradient-to-r from-blue-950/40 via-cyan-950/30 to-blue-950/40 rounded-3xl p-8 lg:p-12 border border-blue-500/10',
     },
     {
       badge: 'Command Center',
@@ -46,6 +77,7 @@ export default function FeaturesSection() {
       ],
       image: '/tab-mok.png',
       imageAlt: 'Command Center Dashboard',
+      tintBg: 'bg-gradient-to-r from-violet-950/40 via-purple-950/30 to-violet-950/40 rounded-3xl p-8 lg:p-12 border border-violet-500/10',
     },
   ];
 
@@ -104,7 +136,8 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${feature.reverse ? 'lg:flex-row-reverse' : ''}`}
+              ref={(el) => (featureRefs.current[index] = el)}
+              className={`feature-entrance grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${feature.reverse ? 'lg:flex-row-reverse' : ''} ${feature.tintBg || ''}`}
             >
               <div className={feature.reverse ? 'order-2 lg:order-1' : ''}>
                 <div className={`inline-block px-4 py-2 backdrop-blur-sm rounded-full text-sm font-semibold mb-4 border ${feature.badgeColor}`}>
@@ -134,8 +167,26 @@ export default function FeaturesSection() {
           ))}
         </div>
 
-        {/* Real-Time Resume */}
-        <div className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-800 rounded-3xl p-12 lg:p-16 text-white mb-24 relative overflow-hidden">
+          {/* Real-Time Resume */}
+        <div 
+          ref={(el) => {
+            if (el && !el.classList.contains('animate-fade-up')) {
+              const observer = new IntersectionObserver(
+                (entries) => {
+                  entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                      entry.target.classList.add('animate-fade-up');
+                      observer.unobserve(entry.target);
+                    }
+                  });
+                },
+                { threshold: 0.2 }
+              );
+              observer.observe(el);
+            }
+          }}
+          className="entrance-element bg-gradient-to-br from-slate-900 via-purple-900 to-slate-800 rounded-3xl p-12 lg:p-16 text-white mb-24 relative overflow-hidden"
+        >
           <div className="absolute inset-0 opacity-10">
             <img
               src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&q=80"
@@ -184,9 +235,35 @@ export default function FeaturesSection() {
           <p className="text-lg text-gray-300">Comprehensive tools across every aspect of workforce management</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div 
+            ref={(el) => {
+              if (el && !el.classList.contains('observed')) {
+                el.classList.add('observed');
+                const observer = new IntersectionObserver(
+                  (entries) => {
+                    entries.forEach((entry) => {
+                      if (entry.isIntersecting) {
+                        const cards = entry.target.querySelectorAll('.feature-category-card');
+                        cards.forEach((card, index) => {
+                          setTimeout(() => {
+                            card.classList.add('animate-fade-up');
+                          }, index * 100);
+                        });
+                        observer.unobserve(entry.target);
+                      }
+                    });
+                  },
+                  { threshold: 0.2 }
+                );
+                observer.observe(el);
+              }
+            }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
           {featureCategories.map((category, idx) => (
-            <FeatureCategoryCard key={idx} {...category} />
+            <div key={idx} className="feature-category-card entrance-element">
+              <FeatureCategoryCard {...category} />
+            </div>
           ))}
         </div>
       </div>

@@ -1,12 +1,34 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import Section from '../Section';
 
 const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL || '';
 
 export default function SignupSection() {
+  const formRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-up');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (formRef.current) {
+      observer.observe(formRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <Section
       id="signup"
@@ -24,7 +46,7 @@ export default function SignupSection() {
           </p>
         </div>
 
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+        <div ref={formRef} className="entrance-element bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
           <MailchimpForm />
         </div>
       </div>

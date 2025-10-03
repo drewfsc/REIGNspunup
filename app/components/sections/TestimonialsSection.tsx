@@ -1,8 +1,36 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import Section from '../Section';
 
 export default function TestimonialsSection() {
+  const testimonialsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const cards = entry.target.querySelectorAll('.testimonial-card');
+            cards.forEach((card, index) => {
+              setTimeout(() => {
+                card.classList.add('animate-fade-up');
+              }, index * 150);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (testimonialsRef.current) {
+      observer.observe(testimonialsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const testimonials = [
     {
       quote: "R.E.I.G.N. helped us identify and eliminate bias we didn't even know existed. Our workforce diversity has increased 40% in just one year.",
@@ -49,9 +77,11 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div ref={testimonialsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={index} {...testimonial} />
+            <div key={index} className="testimonial-card entrance-element">
+              <TestimonialCard {...testimonial} />
+            </div>
           ))}
         </div>
       </div>
