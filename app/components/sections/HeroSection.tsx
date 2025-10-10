@@ -28,11 +28,11 @@ export default function HeroSection() {
           </span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white">
-          Intelligent Workforce
+        <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold mb-6 text-white">
+          World's First Intelligent
           <br />
           <span className="text-gradient-bg gradient-text animate-gradient bg-clip-text text-transparent">
-            Operating System
+          Workforce Operating System
           </span>
         </h1>
 
