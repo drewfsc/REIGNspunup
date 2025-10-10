@@ -46,6 +46,7 @@ export default function FeaturesSection() {
       ],
       image: '/with hand 2.png',
       imageAlt: 'Time & Attendance Dashboard',
+      useContain: true,
       tintBg: 'bg-gradient-to-r from-purple-950/40 via-fuchsia-950/30 to-purple-950/40 rounded-3xl p-8 lg:p-12 border border-purple-500/10',
     },
     {
@@ -59,7 +60,7 @@ export default function FeaturesSection() {
         { text: 'Skill-based labor estimating and project planning', color: 'text-blue-400' },
         { text: 'Custom reporting and trend identification', color: 'text-blue-400' },
       ],
-      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
+      image: '/ai-tile.png',
       imageAlt: 'AI Technology',
       reverse: true,
       tintBg: 'bg-gradient-to-r from-blue-950/40 via-cyan-950/30 to-blue-950/40 rounded-3xl p-8 lg:p-12 border border-blue-500/10',
@@ -77,6 +78,7 @@ export default function FeaturesSection() {
       ],
       image: '/mac-mok.png',
       imageAlt: 'Command Center Dashboard',
+      useContain: true,
       tintBg: 'bg-gradient-to-r from-violet-950/40 via-purple-950/30 to-violet-950/40 rounded-3xl p-8 lg:p-12 border border-violet-500/10',
     },
   ];
@@ -159,7 +161,7 @@ export default function FeaturesSection() {
                   <img
                     src={feature.image}
                     alt={feature.imageAlt}
-                    className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
+                    className={`w-full h-full ${feature.useContain ? 'object-contain' : 'object-cover'} opacity-80 hover:opacity-100 transition-opacity`}
                   />
                 </div>
               </div>
