@@ -4,7 +4,28 @@ import Section from '../Section';
 
 export default function HeroSection() {
   return (
-    <Section
+    <>
+      <style jsx>{`
+        @keyframes shimmer {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+
+        .shimmer-overlay {
+          animation: shimmer 3s infinite;
+          width: 50%;
+        }
+
+        .shimmer-text {
+          position: relative;
+          display: inline-block;
+        }
+      `}</style>
+      <Section
       className="min-h-screen flex items-center justify-center"
       background={{
         gradient: 'bg-slate-950',
@@ -22,19 +43,40 @@ export default function HeroSection() {
       }}
     >
       <div className="max-w-7xl mx-auto px-6 py-24 text-center">
-        <div className="mb-8 inline-block">
-          <span className="px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-sm font-medium backdrop-blur-sm">
-            Introducing R.E.I.G.N
-          </span>
+        {/* Logo with A.I. Treatment */}
+        <div className="mb-12 flex flex-col items-center justify-center">
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse-slow"></div>
+            <img
+              src="/logo.png"
+              alt="R.E.I.G.N. Logo"
+              className="h-24 w-auto relative z-10 drop-shadow-2xl"
+            />
+          </div>
+          <div className="mt-4 flex items-center gap-2">
+            <div className="h-px w-8 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
+            <span className="text-sm font-light tracking-[0.3em] text-purple-300 uppercase">
+              A.I. Powered
+            </span>
+            <div className="h-px w-8 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
+          </div>
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold mb-6 text-white">
+        <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold mb-8 text-white">
           The World's First Intelligent
           <br />
           <span className="text-gradient-bg gradient-text animate-gradient bg-clip-text text-transparent">
           Workforce Operating System
           </span>
         </h1>
+
+        {/* Shimmer Heading */}
+        <div className="mb-8 inline-block relative overflow-hidden">
+          <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-white to-blue-200 relative shimmer-text">
+            Stop guessing, start knowing.
+          </h2>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent shimmer-overlay"></div>
+        </div>
 
         <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
           R.E.I.G.N turns every time-punch into intelligence that protects your profits.
@@ -56,7 +98,8 @@ export default function HeroSection() {
           </a>
         </div>
       </div>
-    </Section>
+      </Section>
+    </>
   );
 }
 
