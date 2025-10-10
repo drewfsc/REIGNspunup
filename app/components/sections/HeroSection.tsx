@@ -29,7 +29,7 @@ export default function HeroSection() {
         </div>
 
         <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold mb-6 text-white">
-          World's First Intelligent
+          The World's First Intelligent
           <br />
           <span className="text-gradient-bg gradient-text animate-gradient bg-clip-text text-transparent">
           Workforce Operating System
@@ -37,8 +37,8 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-          R.E.I.G.N is the next-generation platform for A.I. hiring and workforce development.
-          Transform your organization with data-driven insights rooted in I/O psychology.
+          R.E.I.G.N turns every time-punch into intelligence that protects your profits.
+          Used by companies who refuse to leave money on the table.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -46,13 +46,13 @@ export default function HeroSection() {
             href="#demo"
             className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg font-semibold text-lg transition-all transform hover:scale-105 active:scale-95 shadow-2xl shadow-purple-500/50 ripple-effect"
           >
-            Book a Demo
+            Get Early Access
           </a>
           <a
             href="#signup"
             className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-lg font-semibold text-lg transition-all backdrop-blur-sm border border-white/20 hover:border-white/40 transform hover:scale-105 active:scale-95"
           >
-            Get Early Access
+            Book a Demo
           </a>
         </div>
       </div>
