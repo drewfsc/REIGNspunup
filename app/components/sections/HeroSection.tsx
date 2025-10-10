@@ -9,7 +9,7 @@ export default function HeroSection() {
       background={{
         gradient: 'bg-slate-950',
         image: {
-          src: '/rod-long.jpg',
+          src: '/tech-texture-1.jpg',
           overlay: 'bg-gradient-to-br from-slate-950/85 via-purple-950/80 to-slate-900/85',
         },
         parallaxOrbs: {
@@ -24,20 +24,20 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto px-6 py-24 text-center">
         <div className="mb-8 inline-block">
           <span className="px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-sm font-medium backdrop-blur-sm">
-            Introducing R.E.I.G.N.
+            Introducing R.E.I.G.N
           </span>
         </div>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white">
-          Eliminate Bias.
+          Intelligent Workforce
           <br />
           <span className="text-gradient-bg gradient-text animate-gradient bg-clip-text text-transparent">
-            Empower Growth.
+            Operating System
           </span>
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-          R.E.I.G.N. is the next-generation platform for bias-free hiring and workforce development.
+          R.E.I.G.N is the next-generation platform for A.I. hiring and workforce development.
           Transform your organization with data-driven insights rooted in I/O psychology.
         </p>
 

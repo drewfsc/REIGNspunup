@@ -34,25 +34,25 @@ export default function FeaturesSection() {
 
   const features = [
     {
-      badge: 'Time & Attendance',
+      badge: 'Real-Time Resume',
       badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/30',
       title: 'User-Friendly Interface Turns Clock-Ins Into Insights',
-      description: 'Employee time punches become actionable intelligence. Track attendance, manage schedules, and analyze workforce patterns—all from a beautiful, intuitive interface.',
+      description: 'Real-Time Resume lives in the cloud and is continuously updated with every verified time punch.',
       items: [
         { text: 'Granulated time punches with offline mode', color: 'text-purple-400' },
         { text: 'Skill-based scheduling and project assignments', color: 'text-purple-400' },
         { text: 'PTO, vacation, and shift switch requests', color: 'text-purple-400' },
         { text: 'One-click payroll export', color: 'text-purple-400' },
       ],
-      image: '/mac-mok.png',
+      image: '/tab-mok.png',
       imageAlt: 'Time & Attendance Dashboard',
       tintBg: 'bg-gradient-to-r from-purple-950/40 via-fuchsia-950/30 to-purple-950/40 rounded-3xl p-8 lg:p-12 border border-purple-500/10',
     },
     {
-      badge: 'AI-Powered Intelligence',
+      badge: 'Time & Attendance',
       badgeColor: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
       title: 'Built-In AI Tools You\'ve Never Seen Before',
-      description: 'Harness the power of advanced AI models (GPT, Gemini, Grok) for reasoning, analytics, simulations, and custom reporting that transforms how you manage your workforce.',
+      description: 'Employee time punches become actionable intelligence. Track attendance, manage schedules, and analyze workforce patterns—all from a beautiful, intuitive interface.',
       items: [
         { text: 'Advanced reasoning for complex workforce decisions', color: 'text-blue-400' },
         { text: 'Team builder and performance simulations', color: 'text-blue-400' },
@@ -75,7 +75,7 @@ export default function FeaturesSection() {
         { text: 'Project performance monitoring and analytics', color: 'text-violet-400' },
         { text: 'Skill-based scheduling and assignments', color: 'text-violet-400' },
       ],
-      image: '/tab-mok.png',
+      image: '/mac-mok.png',
       imageAlt: 'Command Center Dashboard',
       tintBg: 'bg-gradient-to-r from-violet-950/40 via-purple-950/30 to-violet-950/40 rounded-3xl p-8 lg:p-12 border border-violet-500/10',
     },
