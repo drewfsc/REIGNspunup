@@ -6,6 +6,7 @@ import {
   FeaturesSection,
   AIShowcaseSection,
   AILogosSection,
+  JourneySection,
   ScreenshotsSection,
   PricingSection,
   TestimonialsSection,
@@ -55,7 +56,8 @@ export default function Home() {
       <FeaturesSection />
       <AIShowcaseSection />
       <AILogosSection />
-      <ScreenshotsSection />
+      <JourneySection />
+      {/* <ScreenshotsSection /> */}
       <PricingSection />
       <TestimonialsSection />
       <SignupSection />

@@ -33,22 +33,22 @@ export default function TestimonialsSection() {
 
   const testimonials = [
     {
-      quote: "R.E.I.G.N. helped us identify and eliminate bias we didn't even know existed. Our workforce diversity has increased 40% in just one year.",
-      author: 'Sarah Chen',
+      quote: "Our best superintendent was scheduling by gut. Good gut, but still a gut.Now he schedules with AI-powered precision. We're running 23% leaner and finishing projects faster. This is a competitive advantage.",
+      author: 'S. Chen',
       role: 'VP of People Operations',
-      industry: 'Healthcare',
+      industry: '',
     },
     {
-      quote: "Finally, a platform that doesn't just talk about equity—it delivers it. The predictive analytics have transformed our hiring process.",
-      author: 'Marcus Williams',
+      quote: "We found $340K in lost productivity in the first 90 days. Just from knowing which crews were actually working and which were burning time.REIGN paid for itself in 6 weeks.",
+      author: 'M. Williams',
       role: 'Chief Talent Officer',
-      industry: 'Construction',
+      industry: '',
     },
     {
-      quote: "The competency mapping feature alone paid for itself. We've reduced turnover by 35% and our promotion decisions are now data-driven and fair.",
-      author: 'Emily Rodriguez',
+      quote: "I thought I knew who my top performers were. I was wrong about 40% of them.REIGN showed me the data. Now promotions are based on proof, not politics.Turnover dropped 35% because people finally feel seen.",
+      author: 'E. Rodriguez',
       role: 'Director of HR',
-      industry: 'Manufacturing',
+      industry: '',
     },
   ];
 
@@ -70,10 +70,10 @@ export default function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Trusted by Industry Leaders
+            Trusted by Companies Who Refuse to Guess
           </h2>
           <p className="text-xl text-gray-300">
-            Organizations across Construction, Healthcare, and Manufacturing rely on R.E.I.G.N.
+            Organizations everywhere now rely on R.E.I.G.N
           </p>
         </div>
 
