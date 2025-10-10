@@ -187,7 +187,7 @@ export default function FeaturesSection() {
               observer.observe(el);
             }
           }}
-          className="entrance-element bg-gradient-to-br from-slate-900 via-purple-900 to-slate-800 rounded-3xl p-12 lg:p-16 text-white mb-24 relative overflow-hidden"
+          className="entrance-element bg-gradient-to-br from-slate-900 via-purple-900 to-slate-800 rounded-3xl p-8 lg:p-12 text-white mb-24 relative overflow-hidden"
         >
           <div className="absolute inset-0 opacity-10">
             <img
@@ -196,34 +196,53 @@ export default function FeaturesSection() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="max-w-4xl mx-auto text-center relative z-10">
-            <div className="inline-block px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-8 border border-white/20">
-              First of Its Kind
-            </div>
-            <h3 className="text-4xl md:text-5xl font-bold mb-6">The "Real-Time Resume"</h3>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Unlike a traditional resume that's static and outdated the moment it's printed,
-              the Real-Time Resume lives in the cloud and is continuously updated with every verified time punch.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-left">
-                <h4 className="text-xl font-bold mb-3 text-purple-300">For Employers</h4>
-                <p className="text-gray-300">
-                  Confident, bias-free decisions about hiring, promotions, and project assignments.
-                  Data you can trust. Proof of potential that can't be inflated or overlooked.
-                </p>
+          <div className="relative z-10">
+            <div className="text-center mb-12">
+              <div className="inline-block px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-6 border border-white/20">
+                First of Its Kind
               </div>
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-left">
-                <h4 className="text-xl font-bold mb-3 text-blue-300">For Employees</h4>
-                <p className="text-gray-300">
-                  Recognition they can see, share, and take with them anywhere in their career.
-                  Skills, hours, projects, badges, and growth milestones—all verified and portable.
-                </p>
+              <h3 className="text-4xl md:text-5xl font-bold mb-4">The "Real-Time Resume"</h3>
+              <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Unlike a traditional resume that's static and outdated the moment it's printed,
+                the Real-Time Resume lives in the cloud and is continuously updated with every verified time punch.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10">
+              <div className="space-y-6">
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-left">
+                  <h4 className="text-xl font-bold mb-3 text-purple-300">For Employers</h4>
+                  <p className="text-gray-300">
+                    Confident, bias-free decisions about hiring, promotions, and project assignments.
+                    Data you can trust. Proof of potential that can't be inflated or overlooked.
+                  </p>
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-left">
+                  <h4 className="text-xl font-bold mb-3 text-blue-300">For Employees</h4>
+                  <p className="text-gray-300">
+                    Recognition they can see, share, and take with them anywhere in their career.
+                    Skills, hours, projects, badges, and growth milestones—all verified and portable.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="relative">
+                <div className="aspect-[4/3] bg-gradient-to-br from-purple-900/40 to-blue-900/40 rounded-2xl overflow-hidden backdrop-blur-sm border border-purple-500/20">
+                  <img
+                    src="/tab-mok.png"
+                    alt="Real-Time Resume Interface"
+                    className="w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  />
+                </div>
               </div>
             </div>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-300">
+            
+            <div className="flex flex-wrap justify-center gap-3 text-sm text-gray-300 pt-6 border-t border-white/10">
               {['Skills tracking', 'Hours worked', 'Completed projects', 'Earned badges', 'Growth milestones'].map((item, idx) => (
-                <span key={idx} className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/10">
+                <span 
+                  key={idx} 
+                  className="px-5 py-2.5 bg-white/10 backdrop-blur-sm rounded-full border border-white/10 hover:bg-white/20 hover:border-purple-400/40 hover:text-white hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 cursor-default"
+                >
                   {item}
                 </span>
               ))}
