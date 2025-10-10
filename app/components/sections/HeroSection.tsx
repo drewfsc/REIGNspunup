@@ -71,7 +71,7 @@ export default function HeroSection() {
         </h1>
 
         {/* Shimmer Heading */}
-        <div className="mb-8 inline-block relative overflow-hidden">
+        <div className="mb-8 inline-block relative overflow-x-hidden">
           <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-white to-blue-200 relative shimmer-text">
             Stop guessing, start knowing.
           </h2>
