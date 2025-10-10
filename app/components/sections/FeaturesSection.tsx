@@ -34,25 +34,25 @@ export default function FeaturesSection() {
 
   const features = [
     {
-      badge: 'Real-Time Resume',
+      badge: 'Time & Attendance',
       badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/30',
       title: 'User-Friendly Interface Turns Clock-Ins Into Insights',
-      description: 'Real-Time Resume lives in the cloud and is continuously updated with every verified time punch.',
+      description: 'Employee time punches become actionable intelligence. Track attendance, manage schedules, and analyze workforce patterns—all from a beautiful, intuitive interface.',
       items: [
         { text: 'Granulated time punches with offline mode', color: 'text-purple-400' },
         { text: 'Skill-based scheduling and project assignments', color: 'text-purple-400' },
         { text: 'PTO, vacation, and shift switch requests', color: 'text-purple-400' },
-        { text: 'One-click payroll export', color: 'text-purple-400' },
+        { text: 'Built-in messaging and company social feed', color: 'text-purple-400' },
       ],
-      image: '/tab-mok.png',
+      image: '/with hand 2.png',
       imageAlt: 'Time & Attendance Dashboard',
       tintBg: 'bg-gradient-to-r from-purple-950/40 via-fuchsia-950/30 to-purple-950/40 rounded-3xl p-8 lg:p-12 border border-purple-500/10',
     },
     {
-      badge: 'Time & Attendance',
+      badge: 'AI-Powered Intelligence',
       badgeColor: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
-      title: 'Built-In AI Tools You\'ve Never Seen Before',
-      description: 'Employee time punches become actionable intelligence. Track attendance, manage schedules, and analyze workforce patterns—all from a beautiful, intuitive interface.',
+      title: 'Every time punch becomes intelligence',
+      description: ' Every pattern becomes prediction. Every decision backed by AI that never stops working. This isnt time tracking with AI bolted on. This is A.I. integrated into time-tracking operations.',
       items: [
         { text: 'Advanced reasoning for complex workforce decisions', color: 'text-blue-400' },
         { text: 'Team builder and performance simulations', color: 'text-blue-400' },
@@ -65,7 +65,7 @@ export default function FeaturesSection() {
       tintBg: 'bg-gradient-to-r from-blue-950/40 via-cyan-950/30 to-blue-950/40 rounded-3xl p-8 lg:p-12 border border-blue-500/10',
     },
     {
-      badge: 'Command Center',
+      badge: 'Employer Dashboards',
       badgeColor: 'bg-violet-500/20 text-violet-300 border-violet-500/30',
       title: 'Customizable, Fully Interactive Employer Dashboards',
       description: 'Your entire operation at a glance. Track trends, communicate with teams, manage projects, and make data-driven decisions from one powerful interface.',
