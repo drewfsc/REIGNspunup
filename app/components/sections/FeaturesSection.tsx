@@ -97,12 +97,12 @@ export default function FeaturesSection() {
     {
       category: 'Human Resources',
       color: 'violet',
-      features: ['DEI Monitoring & Compliance', 'Team Builder & Simulator', 'Employee Comparisons', 'Team Comparison Tool', 'Metric Based Promotions', 'Document Maintenance'],
+      features: ['Compliance & Risk Management', 'Team Builder & Simulator', 'Employee Comparisons', 'Team Comparison Tool', 'Data-Driven Fairness', 'Document Maintenance'],
     },
     {
       category: 'Employee Engagement',
       color: 'pink',
-      features: ['Company Social Feed', 'Recognition Badging', 'Challenges & Goals', 'Skill Progress Tracking', 'Employer Value Tracker', 'Real-Time Resume'],
+      features: ['Company Social Feed', 'Recognition Badging', 'Challenges & Goals', 'Skill Progress Tracking', 'Market Value Tracker', 'Real-Time Resume'],
     },
   ];
 
@@ -237,11 +237,35 @@ export default function FeaturesSection() {
               </div>
             </div>
             
-            <div className="flex flex-wrap justify-center gap-3 text-sm text-gray-300 pt-6 border-t border-white/10">
-              {['Skills tracking', 'Hours worked', 'Completed projects', 'Earned badges', 'Growth milestones'].map((item, idx) => (
+            <div 
+              ref={(el) => {
+                if (el && !el.classList.contains('observed')) {
+                  el.classList.add('observed');
+                  const observer = new IntersectionObserver(
+                    (entries) => {
+                      entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                          const badges = entry.target.querySelectorAll('.feature-badge');
+                          badges.forEach((badge, index) => {
+                            setTimeout(() => {
+                              badge.classList.add('animate-badge-highlight');
+                            }, index * 100);
+                          });
+                          observer.unobserve(entry.target);
+                        }
+                      });
+                    },
+                    { threshold: 0.5 }
+                  );
+                  observer.observe(el);
+                }
+              }}
+              className="flex flex-wrap justify-center gap-3 text-sm text-gray-300 pt-6 border-t border-white/10 capitalize"
+            >
+              {['Timeline view', 'Earned badges', 'Skill-Level Tracking', "Predictive Performance Analysis", "Certification Tracking"].map((item, idx) => (
                 <span 
                   key={idx} 
-                  className="px-5 py-2.5 bg-white/10 backdrop-blur-sm rounded-full border border-white/10 hover:bg-white/20 hover:border-purple-400/40 hover:text-white hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 cursor-default"
+                  className="feature-badge px-5 py-2.5 bg-white/10 backdrop-blur-sm rounded-full border border-white/10 hover:bg-white/20 hover:border-purple-400/40 hover:text-white hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 cursor-default opacity-0"
                 >
                   {item}
                 </span>
