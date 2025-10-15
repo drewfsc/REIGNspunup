@@ -34,7 +34,7 @@ Your R.E.I.G.N website now has comprehensive MailChimp integration for all outre
 ## 🔑 API Configuration
 
 ### **Current Setup**
-- **API Key**: `714f75f85955fbbfcaed5db8c79d6907-us21`
+- **API Key**: `${process.env.MAILCHIMP_API_KEY}`
 - **Server**: `us21` (auto-detected from API key)
 - **Base URL**: `https://us21.api.mailchimp.com/3.0`
 
