@@ -207,7 +207,7 @@ Create these tags for better segmentation:
 
 ## 🔗 Integration Summary
 
-**Your MailChimp API key `714f75f85955fbbfcaed5db8c79d6907-us21` is configured and ready!**
+**Your MailChimp API key `xxxxx` is configured and ready!**
 
 All forms now automatically:
 - ✅ **Validate user input** before submission
