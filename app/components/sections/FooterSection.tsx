@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function FooterSection() {
   return (
     <footer className="bg-slate-950 text-gray-400 py-12">
@@ -38,34 +40,39 @@ export default function FooterSection() {
             <h4 className="text-white font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:text-white transition">
+                <Link href="/about" className="hover:text-white transition">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
-                  Careers
-                </a>
+                <Link href="/privacy" className="hover:text-white transition">
+                  Privacy Policy
+                </Link>
               </li>
               <li>
-                <a href="mailto:info@mindfulmeasuresinc.com" className="hover:text-white transition">
-                  Contact
-                </a>
+                <Link href="/terms" className="hover:text-white transition">
+                  Terms of Service
+                </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-4">Legal</h4>
+            <h4 className="text-white font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:text-white transition">
-                  Privacy Policy
+                <a href="mailto:info@mindfulmeasuresinc.com" className="hover:text-white transition">
+                  Email Us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
-                  Terms of Service
-                </a>
+                <Link href="/demo" className="hover:text-white transition">
+                  Book a Demo
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-white transition">
+                  Contact Form
+                </Link>
               </li>
             </ul>
           </div>

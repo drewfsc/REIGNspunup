@@ -58,7 +58,7 @@ export default function Home() {
       <AILogosSection />
       <JourneySection />
       {/* <ScreenshotsSection /> */}
-      <PricingSection />
+      {/* <PricingSection /> */}
       <TestimonialsSection />
       <SignupSection />
       <DemoSection />
