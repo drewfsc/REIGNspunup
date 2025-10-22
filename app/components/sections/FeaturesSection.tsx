@@ -60,7 +60,7 @@ export default function FeaturesSection() {
         { text: 'Skill-based labor estimating and project planning', color: 'text-blue-400' },
         { text: 'Custom reporting and trend identification', color: 'text-blue-400' },
       ],
-      image: '/ai-tile.png',
+      image: '/openart-image2.jpg',
       imageAlt: 'AI Technology',
       reverse: true,
       tintBg: 'bg-gradient-to-r from-blue-950/40 via-cyan-950/30 to-blue-950/40 rounded-3xl p-8 lg:p-12 border border-blue-500/10',

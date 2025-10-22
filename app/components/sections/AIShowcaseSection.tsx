@@ -29,6 +29,7 @@ export default function AIShowcaseSection() {
 
   return (
     <Section
+      id="ai-showcase"
       className="py-24"
       background={{
         gradient: 'bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900',

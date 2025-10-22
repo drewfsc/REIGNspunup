@@ -4,27 +4,6 @@ import Section from '../Section';
 
 export default function HeroSection() {
   return (
-    <>
-      <style jsx>{`
-        @keyframes shimmer {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
-        }
-
-        .shimmer-overlay {
-          animation: shimmer 3s infinite;
-          width: 50%;
-        }
-
-        .shimmer-text {
-          position: relative;
-          display: inline-block;
-        }
-      `}</style>
       <Section
       className="min-h-screen flex items-center justify-center"
       background={{
@@ -70,13 +49,10 @@ export default function HeroSection() {
           </span>
         </h1>
 
-        {/* Shimmer Heading */}
-        <div className="mb-8 inline-block relative overflow-x-hidden">
-          <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-white to-blue-200 relative shimmer-text">
-            Stop guessing, start knowing.
-          </h2>
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent shimmer-overlay"></div>
-        </div>
+        {/* Tagline */}
+        <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-white to-blue-200 mb-8">
+          Stop guessing, start knowing.
+        </h2>
 
         <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
           R.E.I.G.N turns every time-punch into intelligence that protects your profits.
@@ -99,7 +75,6 @@ export default function HeroSection() {
         </div>
       </div>
       </Section>
-    </>
   );
 }
 

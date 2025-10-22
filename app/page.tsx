@@ -37,8 +37,11 @@ export default function Home() {
               <a href="#features" className="text-gray-300 hover:text-white transition">
                 Features
               </a>
-              <a href="#pricing" className="text-gray-300 hover:text-white transition">
-                Pricing
+              <a href="#ai-showcase" className="text-gray-300 hover:text-white transition">
+                Try Now
+              </a>
+              <a href="#ai-showcase" className="text-gray-300 hover:text-white transition">
+                Real-Time Resume
               </a>
               <a
                 href="#demo"
